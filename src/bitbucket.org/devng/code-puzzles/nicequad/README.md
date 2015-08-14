@@ -2,7 +2,15 @@
 
 This is code puzzle from [https://www.codechef.com/problems/NICEQUAD](https://www.codechef.com/problems/NICEQUAD)
 
+## How to run tests
+The project was tested with Go version 1.4.2. To run the tests use:
+```
+$ go test nicequad.go nicequad_test.go
+```
+
 ## Original description
+
+_Problem code:_ NICEQUAD
 
 There are n points with integer coordinates. We can form different quadrangles out of them by taking four different points and connecting them with lines. Let’s call a quadrangle ABCD nice if and only if:
 
@@ -21,15 +29,19 @@ The first line of input file contains number t – the number of test cases. The
 ### Constraints
 
 1 <= t <= 10
+
 1 <= n <= 30000
+
 -30000 <= x, y <= 30000
-Output
+
+### Output
 
 For each test case print the number of nice quadrangles that can be formed using given points.
 
 ### Example
 
 #### Input:
+```
 1
 6
 1 1
@@ -38,6 +50,8 @@ For each test case print the number of nice quadrangles that can be formed using
 -2 2
 2 -1
 -3 -4
-
+```
 #### Output:
+```
 2
+```
