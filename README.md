@@ -20,3 +20,4 @@ Good Python resources
 * [Python 2.7.x Official Documentation](https://docs.python.org/2.7/library/index.html)
 * [Cheat Sheet: Writing Python 2-3 compatible code](http://python-future.org/compatible_idioms.html)
 * [Google's Python Class](https://developers.google.com/edu/python/?hl=en)
+* [Ned Batchelder's Blog, which has some nice python presentations](http://nedbatchelder.com/text/)
