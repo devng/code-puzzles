@@ -1,5 +1,3 @@
-// Full source code is available @ https://bitbucket.org/devng/code-puzzles
-// Author Nikolay Georgiev, devng.com
 package main
 
 import (

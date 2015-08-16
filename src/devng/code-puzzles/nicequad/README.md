@@ -3,12 +3,24 @@
 This is code puzzle from [https://www.codechef.com/problems/NICEQUAD](https://www.codechef.com/problems/NICEQUAD)
 
 ## How to run tests
-The project was tested with Go version 1.4.2. To run the tests use:
+The project was written and tested with Go version 1.4.2 and Python 2.7.6.
+
+To run a test case file with Go use:
+```
+$ go run nicequad.go  < testcase.txt
+```
+
+And for python use:
+```
+$ ./nicequad.py < testcase.txt
+```
+
+To run the Go tests use:
 ```
 $ go test nicequad.go nicequad_test.go
 ```
 
-## Original description
+## Original problem description
 
 _Problem code:_ NICEQUAD
 
