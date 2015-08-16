@@ -4,7 +4,7 @@ Popular code puzzle sites:
 
 * [Code Chef](https://www.codechef.com)
 * [Project Euler](https://projecteuler.net/)
-* ...
+* [Daily Programmer](https://www.reddit.com/r/dailyprogrammer)
 
 
 Good Go lang resources:
