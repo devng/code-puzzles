@@ -1,6 +1,10 @@
 bin/
 pkg/
+
 # ignore some code dependencies used by Atom
 src/9fans.net
 src/golang.org
 src/github.com
+
+# Python bytecode files
+*.pyc
