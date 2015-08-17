@@ -8,7 +8,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 ## How to run
 
-The project was written and tested with Go version 1.4.2 and Python 2.7.6.
+The project was written and tested with Go version 1.4.2 and Python 2.7.6 and Python 3.4.0.
 
 To run the Go implementation use:
 ```

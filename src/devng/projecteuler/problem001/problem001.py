@@ -8,9 +8,9 @@ def sum_n(n):
 def sum_3_5(limit):
     """sum_3_5 finds the sum of all the multiples of 3 or 5 below the given limit."""
     limit = limit - 1
-    sum3 = sum_n(limit / 3) * 3
-    sum5 = sum_n(limit / 5) * 5
-    sum15 = sum_n(limit / 15) * 15
+    sum3 = sum_n(limit // 3) * 3
+    sum5 = sum_n(limit // 5) * 5
+    sum15 = sum_n(limit // 15) * 15
     result = sum3 + sum5 - sum15
     return result
 
