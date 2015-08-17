@@ -15,7 +15,17 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 
 ## How to run
 
-The project was written and tested with Python 2.7.6 and Python 3.4.0.
+The project was written and tested with Go 1.4.2, Python 2.7.6 and Python 3.4.0.
+
+To run the Go implementation use:
+```
+$ go run problem019.go
+```
+
+To run the Go tests use:
+```
+$ go test problem019.go problem019_test.go
+```
 
 To run the Python implementation use:
 ```
