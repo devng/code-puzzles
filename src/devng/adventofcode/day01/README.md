@@ -38,3 +38,19 @@ For example:
 * `()())` causes him to enter the basement at character position 5.
 
 What is the position of the character that causes Santa to first enter the basement?
+
+
+How to run
+----------
+
+The project was written with Python 2.7.6 and Python 3.4.0.
+
+To run the Python implementation use:
+```
+$ ./day01.py
+```
+
+To run the Python tests use:
+```
+$ ./day01_test.py
+```
