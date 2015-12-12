@@ -43,7 +43,7 @@ What is the position of the character that causes Santa to first enter the basem
 How to run
 ----------
 
-The project was written with Python 2.7 and Python 3.4.
+The project was written and tested with Python 2.7 and Python 3.4.
 
 To run the Python implementation use:
 ```

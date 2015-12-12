@@ -14,6 +14,16 @@ class Day01Test(unittest.TestCase):
         f3 = count_floor(")())())")
         self.assertEqual(f3, -3)
 
+    def test_count_floor_func(self):
+        f1 = count_floor_func("(())")
+        self.assertEqual(f1, 0)
+
+        f2 = count_floor_func("))(((((")
+        self.assertEqual(f2, 3)
+
+        f3 = count_floor_func(")())())")
+        self.assertEqual(f3, -3)
+
     def test_find_basement(self):
         b1 = find_basement(")")
         self.assertEqual(b1, 1)
