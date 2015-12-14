@@ -43,7 +43,7 @@ What is the position of the character that causes Santa to first enter the basem
 How to run
 ----------
 
-The project was written and tested with Python 2.7 and Python 3.4.
+The project was written and tested with Python 2.7, Python 3.4 and Go 1.4.
 
 To run the Python implementation use:
 ```
@@ -53,4 +53,14 @@ $ ./day01.py
 To run the Python tests use:
 ```
 $ ./day01_test.py
+```
+
+To run the Go implementation use:
+```
+$ go run day01.go
+```
+
+To run the Go tests use:
+```
+$ go test day01.go day01_test.go
 ```
