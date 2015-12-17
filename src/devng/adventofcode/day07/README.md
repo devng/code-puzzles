@@ -1,6 +1,9 @@
 Day 7: Some Assembly Required
 =============================
 
+This is code puzzle from:
+<http://adventofcode.com/day/7>
+
 This year, Santa brought little Bobby Tables a set of wires and _bitwise logic gates_! Unfortunately, little Bobby is a little under the recommended age range, and he needs help assembling the circuit.
 
 Each wire has an identifier (some lowercase letters) and can carry a _16-bit_ signal (a number from `0` to `65535`). A signal is provided to each wire by a gate, another wire, or some specific value. Each wire can only get a signal from one source, but can provide its signal to multiple destinations. A gate provides no signal until all of its inputs have a signal.
@@ -43,3 +46,25 @@ y: 456
 ```
 
 In little Bobby's kit's instructions booklet (provided as your puzzle input), what signal is ultimately provided to wire `a`?
+
+Part Two
+--------
+
+Now, take the signal you got on wire `a`, override wire `b` to that signal, and reset the other wires (including wire `a`).
+What new signal is ultimately provided to wire `a`?
+
+
+How to run
+----------
+
+The project was written and tested with Python 3.4 only.
+
+To run the Python implementation use:
+```
+$ ./day07.py
+```
+
+To run the Python tests use:
+```
+$ ./day07_test.py
+```
