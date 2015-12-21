@@ -27,6 +27,13 @@ Given Santa's current password (your puzzle input), what should his next passwor
 
 Your puzzle input is `vzbxkghb`.
 
+
+Part Two
+--------
+
+Santa's password expired again. What's the next one?
+
+
 How to run
 ----------
 
