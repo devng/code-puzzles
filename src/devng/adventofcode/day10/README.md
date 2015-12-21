@@ -1,6 +1,9 @@
 Day 10: Elves Look, Elves Say
 =============================
 
+This is code puzzle from:
+<http://adventofcode.com/day/10>
+
 Today, the Elves are playing a game called look-and-say. They take turns making sequences by reading aloud the previous sequence and using that reading as the next sequence. For example, `211` is read as "one two, two ones", which becomes `1221` (`1` `2`, `2` `1`s).
 
 Look-and-say sequences are generated iteratively, using the previous value as input for the next step. For each step, take the previous value, and replace each run of digits (like `111`) with the number of digits (`3`) followed by the digit itself (`1`).
@@ -23,3 +26,19 @@ Part Two
 Neat, right? You might also enjoy hearing [John Conway talking about this sequence](https://www.youtube.com/watch?v=ea7lJkEhytA) (that's Conway of Conway's Game of Life fame).
 
 Now, starting again with the digits in your puzzle input, apply this process 50 times. What is the length of the new result?
+
+
+How to run
+----------
+
+The project was written and tested with Python 2.7 and Python 3.4.
+
+To run the Python implementation use:
+```
+$ ./day10.py
+```
+
+To run the Python tests use:
+```
+$ ./day10_test.py
+```

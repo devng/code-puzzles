@@ -1,6 +1,9 @@
 Day 9: All in a Single Night
 ============================
 
+This is code puzzle from:
+<http://adventofcode.com/day/9>
+
 Every year, Santa manages to deliver all of his presents in a single night.
 
 This year, however, he has some new locations to visit; his elves have provided him the distances between every pair of locations. He can start and end at any two (different) locations he wants, but he must visit each location exactly once. What is the __shortest distance__ he can travel to achieve this?
@@ -38,3 +41,19 @@ He can still start and end at any two (different) locations he wants, and he sti
 For example, given the distances above, the longest route would be `982` via (for example) `Dublin -> London -> Belfast`.
 
 What is the distance of the longest route?
+
+
+How to run
+----------
+
+The project was written and tested with Python 2.7 and Python 3.4.
+
+To run the Python implementation use:
+```
+$ ./day09.py
+```
+
+To run the Python tests use:
+```
+$ ./day09_test.py
+```
