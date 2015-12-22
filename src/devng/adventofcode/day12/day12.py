@@ -6,37 +6,24 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import json
 import itertools
 
-
-result = 0
 exclude_val = None
 
 def process_json(s):
-    global result
-    result = 0
     j = json.loads(s)
-
-    traverse(j)
-    return result
+    return traverse(j)
 
 def traverse(obj):
-    global result
-    global exclude_val
-
     if isinstance(obj, dict):
-        exclude = False
-        if exclude_val:
-            for k, v in obj.items():
-                if v == exclude_val:
-                    exclude = True
-        if not exclude:
-            return {k: traverse(v) for k, v in obj.items()}
+        if exclude_val and exclude_val in obj.values():
+            return 0
+        else:
+            return sum([traverse(v) for k, v in obj.items()])
     elif isinstance(obj, list):
-        return [traverse(elem) for elem in obj]
+        return sum([traverse(elem) for elem in obj])
+    elif isinstance(obj, int):
+        return obj
     else:
-        try:
-            result += int(obj)  # no container, just values
-        except ValueError:
-            pass
+        return 0
 
 
 def main():
