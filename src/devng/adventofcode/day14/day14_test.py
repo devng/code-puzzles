@@ -3,7 +3,7 @@
 from day14 import *
 import unittest
 
-class Day13Test(unittest.TestCase):
+class Day14Test(unittest.TestCase):
 
     def test_race_distance(self):
         # Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.
