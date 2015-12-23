@@ -14,3 +14,28 @@ For example, suppose you have containers of size `20`, `15`, `10`, `5`, and `5` 
 * `15`, `5`, and `5`
 
 Filling all containers entirely, how many different combinations of containers can exactly fit all `150` liters of eggnog?
+
+
+Part Two
+--------
+
+While playing with all the containers in the kitchen, another load of eggnog arrives! The shipping and receiving department is requesting as many containers as you can spare.
+
+Find the minimum number of containers that can exactly fit all `150` liters of eggnog. __How many different ways__ can you fill that number of containers and still hold exactly `150` litres?
+
+In the example above, the minimum number of containers was two. There were three ways to use that many containers, and so the answer there would be `3`.
+
+How to run
+----------
+
+The project was written and tested with Python 2.7 and Python 3.4.
+
+To run the Python implementation use:
+```
+$ ./day17.py
+```
+
+To run the Python tests use:
+```
+$ ./day17_test.py
+```
