@@ -38,3 +38,28 @@ perfumes: 1
 You make a list of the things you can remember about each Aunt Sue. Things missing from your list aren't zero - you simply don't remember the value.
 
 What is the __number__ of the Sue that got you the gift?
+
+Part Two
+--------
+
+As you're about to send the thank you note, something in the MFCSAM's instructions catches your eye. Apparently, it has an outdated [retroencabulator](https://www.youtube.com/watch?v=RXJKdh1KZ0w), and so the output from the machine isn't exact values - some of them indicate ranges.
+
+In particular, the `cats` and `trees` readings indicates that there are __greater than__ that many (due to the unpredictable nuclear decay of cat dander and tree pollen), while the `pomeranians` and `goldfish` readings indicate that there are __fewer than__ that many (due to the modial interaction of magnetoreluctance).
+
+What is the __number__ of the real Aunt Sue?
+
+
+How to run
+----------
+
+The project was written and tested with Python 2.7 and Python 3.4.
+
+To run the Python implementation use:
+```
+$ ./day16.py
+```
+
+To run the Python tests use:
+```
+$ ./day16_test.py
+```
