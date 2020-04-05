@@ -15,6 +15,10 @@ def count_floor(input):
 
     return floor
 
+def count_floor_func(input):
+    from functools import reduce # needed for python 3
+    return reduce(lambda a,b: a+b, map(lambda ch: 1 if ch == '(' else -1, input))
+
 def find_basement(input):
     floor = 0
     count = 1

@@ -1,0 +1,1 @@
+My solution for the EPAM robot contest for the <http://beachhackathon.com>.

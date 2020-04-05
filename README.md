@@ -9,6 +9,7 @@ This is a repo for learning [Go](https://golang.org/) and [Python](https://www.p
 * [Daily Programmer](https://www.reddit.com/r/dailyprogrammer)
 * [Ruby Quiz](http://rubyquiz.com/)
 * [Codepunt Today](http://codepunt.today/)
+* [Advent of Code](http://adventofcode.com/)
 
 ## Good Go lang resources:
 
