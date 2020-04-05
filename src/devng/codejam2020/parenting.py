@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+from copy import deepcopy
+
 # Checks if a solution shedule is valid for the given tasks
 def check_solution(tasks, solution):
     if len(solution) != len(tasks):
@@ -19,31 +21,54 @@ def check_solution(tasks, solution):
     return True
 
 
-# Input task array in the form: [(S1, E1), (S2, E2), ...]
-# returns a shedule string
-def assign_tasks(tasks):
-    # Bootstrap the process with assigning the first task to J
-    # as we don't really care who takes the first tasks
-    solution_stack = [("J", [], [tasks[0]])]
-
-    while len(solution_stack) > 0:
-        solution, shedule_c, shedule_j = solution_stack.pop()
-        if len(solution) == len(tasks):
-            return solution
-
-        t = tasks[len(solution)]
-        if can_add_task_shedule(t, shedule_j):
-            new_solution = solution + "J"
-            new_shedule_j = shedule_j.copy()
-            new_shedule_j.append(t)
-            solution_stack.append((new_solution, shedule_c, new_shedule_j))
-        if can_add_task_shedule(t, shedule_c):
-            new_solution = solution + "C"
-            new_shedule_c = shedule_c.copy()
-            new_shedule_c.append(t)
-            solution_stack.append((new_solution, new_shedule_c, shedule_j))
+def is_shedule_possible(tasks):
+    minutes_day = [0] * (60 * 24 + 1)
+    for t in tasks:
+        for i in range(t[0], t[1]):
+            minutes_day[i] += 1
+    for m in minutes_day:
+        if m > 2:
+            return False
     
-    return "IMPOSSIBLE"
+    return True
+
+
+# Input task array in the form: [(S0, E0, 0), (S1, E1, 1), ... , (Si, Ei, i)]
+# returns a shedule string
+def assign_tasks(org_tasks):
+    if not is_shedule_possible(org_tasks):
+        return "IMPOSSIBLE"
+
+    # sort the tasks and implment a greedy search
+    tasks = deepcopy(org_tasks)
+    tasks.sort(key = lambda t: t[0])
+    
+    shedule_c = []
+    shedule_j = []
+    solution = ""
+    for t in tasks:
+        if can_add_task_shedule(t, shedule_j):
+            solution += "J"
+            shedule_j.append(t)
+        elif can_add_task_shedule(t, shedule_c):
+            solution += "C"
+            shedule_c.append(t)
+        else:
+            # We should not be able to come here, but program defensively
+            return "WTF"
+    return rearrange_solution(solution, tasks)
+
+
+# We need to re-arrange the solution to the original task order
+# this function does that based on the original index stored in each task
+def rearrange_solution(solution, tasks):
+    final_solution = [""] * len(tasks)
+    for i in range(len(solution)):
+        t = tasks[i]
+        ch = solution[i]
+        final_solution[t[2]] = ch
+    
+    return "".join(final_solution)
 
 
 # Returns True if the task can be added, False otherwise
@@ -62,7 +87,11 @@ def parse_tasks(lines):
     tasks = []
     for i in range(len(lines)):
         line = lines[i].strip()
-        tasks.append(list(map(int, line.split())))
+        t = list(map(int, line.split()))
+        # add the original task index, this is needed because we sort the array later
+        # at the end however we need to know the original order
+        t.append(i) 
+        tasks.append(t)
 
     return tasks
 
