@@ -37,7 +37,8 @@ Limits
 
 Time limit: 20 seconds per test set.
 Memory limit: 1GB.
-N ≤ K ≤ N2.
+
+N ≤ K ≤ N^2.
 Test set 1 (Visible Verdict)
 
 T = 44.
