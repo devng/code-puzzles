@@ -78,4 +78,4 @@ Sample Case #2 has no answer. The only possible 2-by-2 "natural Latin squares" a
 2 1   1 2
 ```
 
-These have traces of 2 and 4, respectively. There is no way to get a trace of 3. 
+These have traces of 2 and 4, respectively. There is no way to get a trace of 3.

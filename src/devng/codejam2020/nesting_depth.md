@@ -74,4 +74,4 @@ Case #4: (1)
 
 The strings ()0000(), (1)0(((()))1) and (1)(11)000 are not valid solutions to Sample Cases #1, #2 and #3, respectively, only because they are not of minimum length. In addition, 1)( and )(1 are not valid solutions to Sample Case #4 because they contain unmatched parentheses and the nesting depth is 0 at the position where there is a 1.
 
-You can create sample inputs that are valid only for Test Set 2 by removing the parentheses from the example strings mentioned in the problem statement. 
+You can create sample inputs that are valid only for Test Set 2 by removing the parentheses from the example strings mentioned in the problem statement.

@@ -2,7 +2,7 @@
 # coding: utf-8
 
 
-# gets the input mastrix as a string list and returns the case matrix as array of arrays
+# gets the input matrix as a string list and returns the case matrix as array of arrays
 def parse_matrix_input(lines):
     case_matrix = []
     for i in range(len(lines)):
@@ -27,7 +27,7 @@ def check_case(case_matrix):
             # since this is an NxN matrix
             num_row = case_matrix[i][j]
             num_col = case_matrix[j][i]
-            
+
             if num_row not in cur_num_row:
                 cur_num_row[num_row] = True
             else:
@@ -37,10 +37,10 @@ def check_case(case_matrix):
                 cur_num_col[num_col] = True
             else:
                 col_has_duplicates = True
-            
+
             if i == j:
                 k += case_matrix[i][j]
-        
+
         if row_has_duplicates:
             r += 1
         if col_has_duplicates:
@@ -58,7 +58,7 @@ if __name__ == "__main__":
         lines = []
         for _ in range(case_size):
             lines.append(input())
-            
+
         case = parse_matrix_input(lines)
         k, r, c = check_case(case)
         print("Case #{}: {} {} {}".format(i, k, r, c))

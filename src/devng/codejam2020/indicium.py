@@ -5,14 +5,14 @@ from itertools import product
 from copy import deepcopy
 
 SLOW_CASE_CACHE = {
-    (5, 6): ["IMPOSSIBLE", None],
-    (5, 11): ["POSSIBLE", 
+    (5, 6):  ["IMPOSSIBLE", None],
+    (5, 11): ["POSSIBLE",
            [[2, 1, 3, 4, 5],
             [1, 2, 4, 5, 3],
             [4, 5, 2, 3, 1],
             [3, 4, 5, 1, 2],
             [5, 3, 1, 2, 4]]],
-    (5, 19): ["POSSIBLE", 
+    (5, 19): ["POSSIBLE",
            [[4, 1, 2, 5, 3],
             [2, 4, 5, 3, 1],
             [3, 5, 4, 1, 2],
@@ -59,8 +59,8 @@ def is_latin_sq(m):
     """
     Check if the provided matrix m is a latin square
     Returns:
-        * 1 if the matrix is a square and they are no empty fields (i.e, fields with value of 0)
-        * 0 if the matrix is a latin square (thus far) but there are still filds with value 0
+        * 1 if the matrix is a latin square and they are no empty fields (i.e, fields with value of 0)
+        * 0 if the matrix is a latin square (thus far) but there are still fields with value 0
         * -1 if the matrix is definitely no latin square
     """
     not_full = False
@@ -106,13 +106,11 @@ def find_matrix(n, k, use_cache=True):
     if use_cache and (n, k) in SLOW_CASE_CACHE:
         return SLOW_CASE_CACHE[(n, k)]
 
-    # Speed up the search process by assigning possible NxN matrices with trace with sum K 
+    # Speed up the search process by assigning possible NxN matrices with trace with sum K
     solution_stack = gen_matrix(n, k)
 
     while len(solution_stack) > 0:
         m = solution_stack.pop()
-        if is_latin_sq(m) > 0:
-            return "POSSIBLE", m
 
         for i in range(n):
             for j in range(n):
@@ -120,8 +118,11 @@ def find_matrix(n, k, use_cache=True):
                     # empty cell try to fill it with values and put it on the stack
                     for val in range(n, 0, -1):
                         m[i][j] = val
-                        if is_latin_sq(m) > -1:
+                        latin_score = is_latin_sq(m)
+                        if latin_score == 0:
                             solution_stack.append(deepcopy(m))
+                        elif latin_score == 1:
+                            return "POSSIBLE", m
 
     return "IMPOSSIBLE", None
 

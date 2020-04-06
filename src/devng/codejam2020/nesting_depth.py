@@ -17,7 +17,7 @@ def insert_parentheses(numbers):
         cur_open = num
     if cur_open > 0:
         result += ")" * cur_open
-    
+
     return result
 
 if __name__ == "__main__":

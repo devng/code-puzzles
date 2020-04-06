@@ -76,4 +76,4 @@ In Sample Case #1, the input is a natural Latin square, which means no row or co
 
 In Sample Case #2, all rows and columns have repeated elements. Notice that each row or column with repeated elements is counted only once regardless of the number of elements that are repeated or how often they are repeated within the row or column. In addition, notice that some integers in the range 1 through N may be absent from the input.
 
-In Sample Case #3, the leftmost and rightmost columns have repeated elements. 
+In Sample Case #3, the leftmost and rightmost columns have repeated elements.

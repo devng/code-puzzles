@@ -87,4 +87,4 @@ In Sample Case #2, all three activities overlap with each other. Assigning them 
 
 In Sample Case #3, notice that Cameron ends an activity and starts another one at minute 100.
 
-In Sample Case #4, any schedule would be valid. Specifically, it is OK for one partner to do all activities. 
+In Sample Case #4, any schedule would be valid. Specifically, it is OK for one partner to do all activities.
