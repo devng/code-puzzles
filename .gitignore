@@ -8,3 +8,6 @@ src/github.com
 
 # Python bytecode files
 *.pyc
+
+# VS Code config
+.vscode/
