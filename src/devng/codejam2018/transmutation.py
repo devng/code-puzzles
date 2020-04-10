@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# This solution only passes the first two test sets
+# Run time complexity is O(M*S)
+
 DEBUG = False
 
 def solve(M, R, G):
