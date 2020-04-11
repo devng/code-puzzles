@@ -11,3 +11,6 @@ src/github.com
 
 # VS Code config
 .vscode/
+
+# mypy chaching
+.mypy*
