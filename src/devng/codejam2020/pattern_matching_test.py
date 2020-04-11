@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-from local_testing import local_shell_test
+import sys
+sys.path.insert(0,'..')
+from codejam_local_testing import local_shell_test
 
 
 test_input = ["""
@@ -55,4 +57,4 @@ Case #6: QA
 """
 ]
 
-local_shell_test("pattern_matching.py", test_input, expected_output)
+local_shell_test("python3 pattern_matching.py", test_input, expected_output, False)
