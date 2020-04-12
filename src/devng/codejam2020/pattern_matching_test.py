@@ -2,7 +2,8 @@
 # coding: utf-8
 
 import sys
-sys.path.insert(0,'..')
+script_dir = sys.path[0]
+sys.path.insert(0, script_dir + '/..')
 from codejam_local_testing import local_shell_test
 
 
@@ -57,4 +58,5 @@ Case #6: QA
 """
 ]
 
-local_shell_test("python3 pattern_matching.py", test_input, expected_output, False)
+cmd = "python3 {}/pattern_matching.py".format(script_dir)
+local_shell_test(cmd, test_input, expected_output, False)

@@ -16,33 +16,25 @@ def split_patterns(P):
 
 
 def solve(P):
-    result = [""] * 10000
-    N = len(P)
-    p, s, middle = split_patterns(P)
+    preffixes, suffixes, middle = split_patterns(P)
 
-    for i in range(N):
-        p_i = p[i]
-        s_i = s[i]
-        for i in range(len(p_i)):
-            p_ch = p_i[i]
-            r_ch = result[i]
-            if r_ch == "":
-                result[i] = p_ch
-            elif r_ch != p_ch:
-                return "*"
+    preffixes.sort(key = lambda s: len(s))
+    cur_p = ""
+    for p in preffixes:
+        if p.startswith(cur_p):
+            cur_p = p
+        else:
+            return "*"
 
-        for i in range(len(s_i)):
-            s_ch = s_i[len(s_i) - 1 - i]
-            r_i = len(result) - 1 - i
-            r_ch = result[r_i]
-            if r_ch == "":
-                result[r_i] = s_ch
-            elif r_ch != s_ch:
-                return "*"
+    suffixes.sort(key = lambda s: len(s))
+    cur_s = ""
+    for s in suffixes:
+        if s.endswith(cur_s):
+            cur_s = s
+        else:
+            return "*"
 
-    # add all middle parts and join the result array into a string
-    result[result.index("")] = middle
-    return "".join(result)
+    return cur_p + middle + cur_s
 
 
 if __name__ == "__main__":
