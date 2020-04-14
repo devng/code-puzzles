@@ -4,11 +4,14 @@ This is a repo for learning [Go](https://golang.org/) and [Python](https://www.p
 
 ## Popular code puzzle sites:
 
+* [Google Code Jam](https://codingcompetitions.withgoogle.com/codejam)
+* [Codewars](https://www.codewars.com/)
+* [LeetCode](https://leetcode.com/)
+* [HackerRank](https://www.hackerrank.com/)
 * [Code Chef](https://www.codechef.com)
 * [Project Euler](https://projecteuler.net/)
 * [Daily Programmer](https://www.reddit.com/r/dailyprogrammer)
 * [Ruby Quiz](http://rubyquiz.com/)
-* [Codepunt Today](http://codepunt.today/)
 * [Advent of Code](http://adventofcode.com/)
 
 ## Good Go lang resources:
@@ -22,7 +25,7 @@ This is a repo for learning [Go](https://golang.org/) and [Python](https://www.p
 
 ## Good Python resources:
 
-* [Python 2.7.x Official Documentation](https://docs.python.org/2.7/library/index.html)
+* [Python 3.6.x Official Documentation](https://docs.python.org/3.6/library/index.html)
 * [Cheat Sheet: Writing Python 2-3 compatible code](http://python-future.org/compatible_idioms.html)
 * [Google's Python Class](https://developers.google.com/edu/python/?hl=en)
 * [Ned Batchelder's Blog, which has some nice python presentations](http://nedbatchelder.com/text/)
