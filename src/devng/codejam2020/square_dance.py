@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-import heapq
 
 class Dancer:
     def __init__(self, x, y, skill):
@@ -10,6 +9,7 @@ class Dancer:
         self.skill = skill
         self.prio = skill
         self.deleted = False
+        self.hashval = hash((x, y))
         self.compass_neighbors = set()
 
 
@@ -32,6 +32,8 @@ class Dancer:
         n_y = None
         for cn in self.compass_neighbors:
             cn.removeCompassNeighbor(self)
+            if cn.deleted:
+                continue
             if cn.x == self.x:
                 if n_x:
                     cn.addCompassNeighbor(n_x)
@@ -44,12 +46,14 @@ class Dancer:
                     n_y.addCompassNeighbor(cn)
                 else:
                     n_y = cn
-        return self.compass_neighbors
+        result = self.compass_neighbors
+        self.compass_neighbors = set()
+        return result
 
 
     def computePrio(self):
         if len(self.compass_neighbors) > 0:
-            self.prio = self.skill - sum([cn.skill for cn in self.compass_neighbors])/len(self.compass_neighbors)
+            self.prio = self.skill - sum([cn.skill for cn in self.compass_neighbors]) / len(self.compass_neighbors)
         else:
             self.prio = self.skill
 
@@ -60,13 +64,10 @@ class Dancer:
 
 
     def __hash__(self):
-        return hash((self.x, self.y))
+        return self.hashval
 
 
     def __eq__(self, other):
-        if not isinstance(other, Dancer):
-            return False
-
         return self.x == other.x and self.y == other.y
 
 
@@ -82,6 +83,7 @@ def solve(R, C, dance_floor):
         for x in range(C):
             d = Dancer(x, y, dance_floor[y][x])
             dancer_graph.append(d)
+
     # Initially all dancers have adjacent compass neighbors
     for d in dancer_graph:
         if d.x - 1 >= 0:
@@ -92,35 +94,40 @@ def solve(R, C, dance_floor):
             d.addCompassNeighbor(dancer_graph[d.y * C + d.x + 1])
         if d.y + 1 < R:
             d.addCompassNeighbor(dancer_graph[(d.y + 1) * C + d.x])
-    # Init prio for the heapq
+
+    interest_level_round = 0
+    to_be_removed = set()
     for d in dancer_graph:
         d.computePrio()
+        interest_level_round += d.skill
+        if d.prio < 0:
+            to_be_removed.add(d)
 
-    interest_level_round = sum([d.skill for d in dancer_graph])
     interest_level_competition = interest_level_round
+    affected_nodes = set()
     while True:
-        heapq.heapify(dancer_graph)
-        affected_nodes = set()
         interest_level_drop = 0
-        while len(dancer_graph) > 0 and dancer_graph[0].prio < 0:
-            d = heapq.heappop(dancer_graph)
+        affected_nodes.clear()
+        for d in to_be_removed:
             interest_level_drop += d.skill
             affected_nodes.update(d.removeItselfFromNeighbors())
 
         if len(affected_nodes) == 0:
             break
 
+        to_be_removed.clear()
         interest_level_round -= interest_level_drop
         interest_level_competition += interest_level_round
         for a in affected_nodes:
             a.computePrio()
+            if a.prio < 0:
+                to_be_removed.add(a)
 
     return interest_level_competition
 
 
 if __name__ == "__main__":
-    # input() reads a string with a line of input, stripping the ' ' (newline) at the end.
-    T = int(input()) # read a line with a single integer
+    T = int(input())
     for t in range(1, T + 1):
         R, C = list(map(int, input().split()))
         dance_floor = []
